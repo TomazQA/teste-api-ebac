@@ -41,7 +41,7 @@ describe('Testes da Funcionalidade Usuários', () => {
   it('Deve validar um usuário com email inválido', () => {
     cy.cadastrarUsuario(token, 'Enrico', 'teste  ' + Math.floor(Math.random() * 1000) + '@qa.com', 'teste', 'true')
       .should((response) => {
-        expect(response.body.email).equal('email deve ser um email válido') // response.body.email 
+        expect(response.body.email).equal('email deve ser um email válido')
         expect(response.status).to.equal(400)
       })
   });
